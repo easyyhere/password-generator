@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Haseł</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🔐 Generator Haseł</h1>
+            <p class="subtitle">Generuj bezpieczne hasła w sekundę</p>
+        </div>
+
+        <div class="password-section">
+            <div class="password-display">
+                <input type="text" id="passwordOutput" readonly placeholder="Wygenerowane hasło pojawi się tutaj...">
+                <button class="copy-btn" id="copyBtn" title="Kopiuj hasło">📋</button>
+            </div>
+            <div class="strength-meter">
+                <div class="strength-bar" id="strengthBar"></div>
+                <span class="strength-text" id="strengthText">Siła hasła</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="lengthSlider">Długość hasła: <span id="lengthValue">12</span></label>
+                <input type="range" id="lengthSlider" min="4" max="50" value="12" class="slider">
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        Wielkie litery (A-Z)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        Małe litery (a-z)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        Cyfry (0-9)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="checkmark"></span>
+                        Znaki specjalne (!@#$%^&*)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="excludeSimilar">
+                        <span class="checkmark"></span>
+                        Wyklucz podobne znaki (0, O, l, I)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="excludeAmbiguous">
+                        <span class="checkmark"></span>
+                        Wyklucz niejednoznaczne znaki ({ } [ ] ( ) / \ ' " ` ~ , ; . < >)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="generate-btn" id="generateBtn">🎲 Generuj hasło</button>
+            <button class="preset-btn" id="presetWeak">Słabe (8 znaków)</button>
+            <button class="preset-btn" id="presetMedium">Średnie (12 znaków)</button>
+            <button class="preset-btn" id="presetStrong">Silne (20 znaków)</button>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <h3>💡 Wskazówki bezpieczeństwa</h3>
+                <ul>
+                    <li>Używaj unikalnych haseł dla każdego konta</li>
+                    <li>Hasła powinny mieć co najmniej 12 znaków</li>
+                    <li>Mieszaj różne typy znaków</li>
+                    <li>Unikaj informacji osobistych w hasłach</li>
+                    <li>Regularnie zmieniaj hasła do ważnych kont</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
